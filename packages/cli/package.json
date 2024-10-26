@@ -1,15 +1,24 @@
 {
-  "name": "@alb-xh/roomie",
-  "version": "1.0.0",
-  "description": "CLI to connect to different rooms",
-  "main": "dist/index.js",
-  "bin": "dist/index.js",
-  "scripts": {
-  },
-  "keywords": [],
-  "author": "https://github.com/alb-xh",
-  "license": "ISC",
-  "repository": {
-    "url": "https://github.com/alb-xh/roomie.git"
-  }
+	"name": "@alb-xh/roomie",
+	"version": "1.0.0",
+	"description": "CLI to connect to different rooms",
+	"main": "dist/index.js",
+	"bin": "dist/index.js",
+	"scripts": {
+		"start": "node ./dist/index.js",
+		"dev": "npx tsx ./src/index.ts"
+	},
+	"keywords": [],
+	"author": "https://github.com/alb-xh",
+	"license": "ISC",
+	"repository": {
+		"url": "https://github.com/alb-xh/roomie.git"
+	},
+	"dependencies": {
+		"@roomie/core": "workspace:^",
+		"commander": "^12.1.0"
+	},
+	"devDependencies": {
+		"tsx": "^4.19.1"
+	}
 }

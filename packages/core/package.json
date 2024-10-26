@@ -1,14 +1,17 @@
 {
-  "name": "@roomie/core",
-  "version": "1.0.0",
-  "description": "Core functionality",
-  "main": "dist/index.js",
-  "scripts": {
-  },
-  "keywords": [],
-  "author": "https://github.com/alb-xh",
-  "license": "ISC",
-  "repository": {
-    "url": "https://github.com/alb-xh/roomie.git"
-  }
+	"name": "@roomie/core",
+	"version": "1.0.0",
+	"description": "Core functionality",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {},
+	"keywords": [],
+	"author": "https://github.com/alb-xh",
+	"license": "ISC",
+	"repository": {
+		"url": "https://github.com/alb-xh/roomie.git"
+	},
+	"dependencies": {
+		"winston": "^3.15.0"
+	}
 }

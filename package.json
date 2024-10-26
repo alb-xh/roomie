@@ -1,25 +1,27 @@
 {
-  "name": "@alb-xh/roomie",
-  "version": "1.0.0",
-  "description": "Monorepo for roomie CLI",
-  "main": "index.js",
-  "scripts": {
-    "prepare": "husky",
-    "build": "tsc --build"
-  },
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
-  },
-  "keywords": [],
-  "author": "https://github.com/alb-xh",
-  "license": "ISC",
-  "repository": {
-    "url": "https://github.com/alb-xh/roomie.git"
-  },
-  "devDependencies": {
-    "husky": "^9.1.6",
-    "lint-staged": "^15.2.10",
-    "prettier": "3.3.3",
-    "typescript": "^5.6.3"
-  }
+	"name": "@alb-xh/roomie",
+	"version": "1.0.0",
+	"description": "Monorepo for roomie CLI",
+	"main": "index.js",
+	"scripts": {
+		"prepare": "husky",
+		"clear": "rm -f packages/**/*.tsbuildinfo >> /dev/null && rm -rf packages/**/dist >> /dev/null",
+		"build": "pnpm clear && tsc --build"
+	},
+	"lint-staged": {
+		"**/*": "prettier --write --ignore-unknown"
+	},
+	"keywords": [],
+	"author": "https://github.com/alb-xh",
+	"license": "ISC",
+	"repository": {
+		"url": "https://github.com/alb-xh/roomie.git"
+	},
+	"devDependencies": {
+		"@types/node": "^22.8.1",
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
+		"prettier": "3.3.3",
+		"typescript": "^5.6.3"
+	}
 }
