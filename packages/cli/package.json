@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "https://github.com/alb-xh",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "url": "https://github.com/alb-xh/roomie.git"
+  }
 }
