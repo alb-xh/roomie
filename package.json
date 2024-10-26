@@ -1,0 +1,22 @@
+{
+  "name": "@alb-xh/roomie",
+  "version": "1.0.0",
+  "description": "Monorepo for roomie CLI",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky",
+    "build": "tsc --build"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "keywords": [],
+  "author": "https://github.com/alb-xh",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "3.3.3",
+    "typescript": "^5.6.3"
+  }
+}

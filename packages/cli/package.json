@@ -1,0 +1,12 @@
+{
+  "name": "@alb-xh/roomie",
+  "version": "1.0.0",
+  "description": "CLI to connect to different rooms",
+  "main": "dist/index.js",
+  "bin": "dist/index.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "https://github.com/alb-xh",
+  "license": "ISC"
+}

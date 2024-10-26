@@ -1,0 +1,11 @@
+{
+  "name": "@roomie/core",
+  "version": "1.0.0",
+  "description": "Core functionality",
+  "main": "dist/index.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "https://github.com/alb-xh",
+  "license": "ISC"
+}
