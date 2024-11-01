@@ -20,9 +20,4 @@ export class Storage<T> {
 	async set(data: T): Promise<void> {
 		await fs.writeFile(this.path, JSON.stringify(data));
 	}
-
-	async append(data: Partial<T>): Promise<void> {
-		const currentData = await this.get();
-		await this.set({ ...currentData, ...data } as T);
-	}
 }
