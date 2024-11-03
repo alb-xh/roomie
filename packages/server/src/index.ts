@@ -1,5 +1,7 @@
 import { Server } from 'socket.io';
 
+import { config } from './config';
+
 const io = new Server();
 
 io.on('connection', (socket) => {
@@ -9,6 +11,6 @@ io.on('connection', (socket) => {
 	});
 });
 
-io.listen(3000);
+io.listen(config.getPort());
 
 console.log('Server is listening');
