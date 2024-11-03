@@ -9,8 +9,6 @@ const command = new Command('account').description('Manage user account').action
 		error,
 		accountValidator,
 	)(async () => {
-		if (!(await account.exists())) throw new ActionError('Please set the account first!');
-
 		const { name } = await account.get();
 
 		console.log(`Name: ${name}`);

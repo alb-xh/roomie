@@ -1,16 +1,15 @@
 import { Command } from 'commander';
 import { v4 } from 'uuid';
-import { io } from 'socket.io-client';
 
 import { chats } from './storages';
 import { ActionError } from './errors';
 import { use, error, accountValidator, nameValidator, idValidator } from './middlewares';
+import { socket } from './socket';
 
 const command = new Command('chat').description('Manage chats').action(
 	use(
 		error,
 		accountValidator,
-		nameValidator,
 	)(async () => {
 		const data = (await chats.exists()) ? await chats.get() : {};
 		const items = Object.keys(data).map((name) => ({ name, id: data[name] }));
@@ -113,6 +112,25 @@ command
 			const data = (await chats.exists()) ? await chats.get() : {};
 			if (!data[name]) throw new ActionError(`Chat doesn't exist`);
 
+			socket.on(
+				'connect_error',
+				error((err) => {
+					throw err;
+				}),
+			);
+
+			socket.on(
+				'disconnect',
+				error((reason) => {
+					throw new Error(`Disconnected unexpectedly: ${JSON.stringify(reason)}`);
+				}),
+			);
+
+			socket.on('connect', () => {
+				console.log('Connected');
+			});
+
+			socket.connect();
 			console.log(`Connecting...`);
 		}),
 	);

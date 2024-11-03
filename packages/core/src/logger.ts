@@ -26,11 +26,8 @@ export class Logger {
 
 	constructor(options: LoggerOptions = {}) {
 		this.baseLogger = winston.createLogger({
-			level:
-				(options.level ?? Env.isProduction()) ? LogLevel.Info : LogLevel.Debug,
-			transports: [
-				this.transportMap[options.transport ?? LogTransport.Console],
-			],
+			level: (options.level ?? Env.isProduction()) ? LogLevel.Info : LogLevel.Debug,
+			transports: [this.transportMap[options.transport ?? LogTransport.Console]],
 		});
 	}
 

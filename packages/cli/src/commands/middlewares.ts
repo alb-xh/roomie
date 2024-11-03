@@ -3,6 +3,7 @@ import { isAlphanumeric, isLength, isUUID } from 'validator';
 import { logger } from '../logger';
 import { ActionError } from './errors';
 import { account } from './storages';
+import { exit } from 'node:process';
 
 export type Middleware = (action: (...args: any[]) => Promise<void>) => (...args: any[]) => Promise<void>;
 
@@ -27,6 +28,8 @@ export const error: Middleware =
 
 			logger.error(err);
 			console.log('Something went wrong :(');
+
+			exit();
 		}
 	};
 
