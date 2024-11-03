@@ -1,9 +1,10 @@
 {
-  "tabWidth": 2,
-  "semi": true,
-  "trailingComma": "all",
-  "singleQuote": true,
-  "endOfLine": "lf",
-  "useTabs": true,
-  "arrowParens": "always"
+	"tabWidth": 2,
+	"semi": true,
+	"trailingComma": "all",
+	"singleQuote": true,
+	"endOfLine": "lf",
+	"useTabs": true,
+	"arrowParens": "always",
+	"printWidth": 150
 }
