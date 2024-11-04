@@ -1,8 +1,7 @@
 import { Command } from 'commander';
 
-import { account } from './storages';
-import { ActionError } from './errors';
-import { use, error, accountValidator, nameValidator } from './middlewares';
+import { account } from './storages.js';
+import { use, error, accountValidator, nameValidator } from './middlewares.js';
 
 const command = new Command('account').description('Manage user account').action(
 	use(

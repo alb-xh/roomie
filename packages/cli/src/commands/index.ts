@@ -1,2 +1,2 @@
-export { command as accountCommand } from './account';
-export { command as chatCommand } from './chat';
+export { command as accountCommand } from './account.js';
+export { command as chatCommand } from './chat.js';

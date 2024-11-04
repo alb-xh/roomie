@@ -4,6 +4,7 @@
 	"description": "Core functionality",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"type": "module",
 	"scripts": {},
 	"keywords": [],
 	"author": "https://github.com/alb-xh",

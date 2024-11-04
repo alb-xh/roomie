@@ -1,10 +1,13 @@
+import React from 'react';
 import { Command } from 'commander';
 import { v4 } from 'uuid';
+import { render } from 'ink';
 
-import { chats } from './storages';
-import { ActionError } from './errors';
-import { use, error, accountValidator, nameValidator, idValidator } from './middlewares';
-import { socket } from './socket';
+import { Chat } from '../ui/index.js';
+import { account, chats } from './storages.js';
+import { ActionError } from './errors.js';
+import { use, error, accountValidator, nameValidator, idValidator } from './middlewares.js';
+import { socket } from './socket.js';
 
 const command = new Command('chat').description('Manage chats').action(
 	use(
@@ -110,28 +113,13 @@ command
 			nameValidator,
 		)(async (name) => {
 			const data = (await chats.exists()) ? await chats.get() : {};
-			if (!data[name]) throw new ActionError(`Chat doesn't exist`);
+			const chatId = data[name];
 
-			socket.on(
-				'connect_error',
-				error((err) => {
-					throw err;
-				}),
-			);
+			if (!chatId) throw new ActionError(`Chat doesn't exist`);
 
-			socket.on(
-				'disconnect',
-				error((reason) => {
-					throw new Error(`Disconnected unexpectedly: ${JSON.stringify(reason)}`);
-				}),
-			);
+			const { name: username } = await account.get();
 
-			socket.on('connect', () => {
-				console.log('Connected');
-			});
-
-			socket.connect();
-			console.log(`Connecting...`);
+			render(<Chat from={username} chatId={chatId} socket={socket} />);
 		}),
 	);
 

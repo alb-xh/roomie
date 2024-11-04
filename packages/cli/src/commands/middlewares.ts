@@ -1,9 +1,8 @@
-import { isAlphanumeric, isLength, isUUID } from 'validator';
+import v from 'validator';
 
-import { logger } from '../logger';
-import { ActionError } from './errors';
-import { account } from './storages';
-import { exit } from 'node:process';
+import { logger } from '../logger.js';
+import { ActionError } from './errors.js';
+import { account } from './storages.js';
 
 export type Middleware = (action: (...args: any[]) => Promise<void>) => (...args: any[]) => Promise<void>;
 
@@ -28,8 +27,6 @@ export const error: Middleware =
 
 			logger.error(err);
 			console.log('Something went wrong :(');
-
-			exit();
 		}
 	};
 
@@ -46,10 +43,10 @@ export const accountValidator = validator(async () => {
 });
 
 export const nameValidator = validator(async (name: string) => {
-	if (!isAlphanumeric(name)) throw new ActionError('Name must contain only letters and numbers');
-	if (!isLength(name, { min: 4, max: 20 })) throw new ActionError('Name must be between 4 and 20 character long');
+	if (!v.isAlphanumeric(name)) throw new ActionError('Name must contain only letters and numbers');
+	if (!v.isLength(name, { min: 4, max: 20 })) throw new ActionError('Name must be between 4 and 20 character long');
 });
 
 export const idValidator = validator(async (_, id: string) => {
-	if (!isUUID(id)) throw new ActionError('Id must be a UUID');
+	if (!v.isUUID(id)) throw new ActionError('Id must be a UUID');
 });

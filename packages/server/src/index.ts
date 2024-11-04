@@ -1,13 +1,21 @@
 import { Server } from 'socket.io';
 
-import { config } from './config';
+import { config } from './config.js';
 
 const io = new Server();
 
+// ADD validation
 io.on('connection', (socket) => {
-	socket.on('message', async (chatId: string, message: string) => {
-		socket.join(chatId);
-		socket.to(chatId).emit('message', message);
+	socket.on('join', (chatId) => {
+		if (!socket.rooms.has(chatId)) {
+			socket.join(chatId);
+		}
+	});
+
+	socket.on('message', async (chatId, message: { from: string; content: string }) => {
+		if (socket.rooms.has(chatId)) {
+			socket.to(chatId).emit('message', message);
+		}
 	});
 });
 

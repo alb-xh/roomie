@@ -19,6 +19,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^22.8.1",
+		"@types/react": "^18.3.12",
 		"@types/validator": "^13.12.2",
 		"husky": "^9.1.6",
 		"lint-staged": "^15.2.10",

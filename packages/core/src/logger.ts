@@ -1,5 +1,5 @@
 import winston from 'winston';
-import { Env } from './env';
+import { Env } from './env.js';
 
 export enum LogLevel {
 	Error = 'error',

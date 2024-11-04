@@ -6,6 +6,7 @@
 		"outDir": "dist",
 		"paths": {
 			"@roomie/core": ["../core/src"]
-		}
+		},
+		"jsx": "react"
 	}
 }
