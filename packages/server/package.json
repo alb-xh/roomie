@@ -1,6 +1,6 @@
 {
 	"name": "@roomie/server",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Websocket server",
 	"main": "dist/index.js",
 	"bin": "dist/index.js",
