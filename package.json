@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"prepare": "husky",
+		"xi": "pnpm install --ignore-scripts --no-frozen-lockfile",
 		"clear": "rm -f packages/**/*.tsbuildinfo >> /dev/null && rm -rf packages/**/dist >> /dev/null",
 		"build": "pnpm clear && tsc --build"
 	},
