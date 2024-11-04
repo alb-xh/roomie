@@ -38,7 +38,7 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(ink@5.0.1(@types/react@18.3.12)(react@18.3.1))
       '@roomie/core':
-        specifier: workspace:^
+        specifier: file:../core
         version: link:../core
       commander:
         specifier: ^12.1.0
@@ -67,6 +67,9 @@ importers:
       validator:
         specifier: ^13.12.0
         version: 13.12.0
+      winston:
+        specifier: ^3.15.0
+        version: 3.15.0
     devDependencies:
       tsx:
         specifier: ^4.19.1

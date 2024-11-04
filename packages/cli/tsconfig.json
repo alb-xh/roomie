@@ -4,9 +4,9 @@
 	"compilerOptions": {
 		"rootDir": "src",
 		"outDir": "dist",
+		"jsx": "react",
 		"paths": {
 			"@roomie/core": ["../core/src"]
-		},
-		"jsx": "react"
+		}
 	}
 }

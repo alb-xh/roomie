@@ -1,0 +1,9 @@
+node_modules
+src
+tsconfig.json
+assets
+README.md
+.env.dev
+*.log
+*.json
+*.tsbuildinfo
