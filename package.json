@@ -18,6 +18,7 @@
 		"url": "https://github.com/alb-xh/roomie.git"
 	},
 	"devDependencies": {
+		"@types/lodash": "^4.17.13",
 		"@types/node": "^22.8.1",
 		"@types/react": "^18.3.12",
 		"@types/validator": "^13.12.2",

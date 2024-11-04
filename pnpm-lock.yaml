@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     devDependencies:
+      '@types/lodash':
+        specifier: ^4.17.13
+        version: 4.17.13
       '@types/node':
         specifier: ^22.8.1
         version: 22.8.1
@@ -49,6 +52,9 @@ importers:
       ink-text-input:
         specifier: ^6.0.0
         version: 6.0.0(ink@5.0.1(@types/react@18.3.12)(react@18.3.1))(react@18.3.1)
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -285,6 +291,10 @@ packages:
   '@types/cors@2.8.17':
     resolution:
       { integrity: sha512-8CGDvrBj1zgo2qE+oS3pOCyYNqCPryMWY2bGfwA0dcfopWGgxs+78df0Rs3rc9THP4JkOhLsAa+15VdpAqkcUA== }
+
+  '@types/lodash@4.17.13':
+    resolution:
+      { integrity: sha512-lfx+dftrEZcdBPczf9d0Qv0x+j/rfNCMuC6OcfXmO8gkfeNAY88PgKUbvG56whcN23gc27yenwF6oJZXGFpYxg== }
 
   '@types/node@22.8.1':
     resolution:
@@ -1154,6 +1164,8 @@ snapshots:
   '@types/cors@2.8.17':
     dependencies:
       '@types/node': 22.8.1
+
+  '@types/lodash@4.17.13': {}
 
   '@types/node@22.8.1':
     dependencies:
